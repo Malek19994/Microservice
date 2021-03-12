@@ -1,0 +1,46 @@
+{
+  "name": "Discipline",
+  "fields": [
+    {
+      "fieldName": "disciplineName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "disciplineDescription",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "disciplinePrice",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "resource",
+      "otherEntityRelationshipName": "discipline",
+      "relationshipName": "resources"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "program",
+      "otherEntityRelationshipName": "disciplines",
+      "relationshipName": "programs",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20210310142214",
+  "entityTableName": "discipline",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "armory",
+  "applications": "*",
+  "microserviceName": "armory"
+}

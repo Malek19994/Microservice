@@ -1,0 +1,72 @@
+{
+  "name": "Resource",
+  "fields": [
+    {
+      "fieldName": "resourceName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "resourceDescription",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "resourceURL",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "resourcePreviewImage",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "resourceType",
+      "fieldType": "ResourceType",
+      "fieldValues": "VIDEO,IMAGE,TUTORIAL,PAGE,PARTIAL,TOOL"
+    },
+    {
+      "fieldName": "weight",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "discipline",
+      "otherEntityRelationshipName": "resources",
+      "relationshipName": "discipline",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "program",
+      "otherEntityRelationshipName": "resources",
+      "relationshipName": "program",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "course",
+      "otherEntityRelationshipName": "resources",
+      "relationshipName": "course",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "lesson",
+      "otherEntityRelationshipName": "resources",
+      "relationshipName": "lesson",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210310142614",
+  "entityTableName": "resource",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "armory",
+  "applications": "*",
+  "microserviceName": "armory"
+}

@@ -1,0 +1,59 @@
+{
+  "name": "Course",
+  "fields": [
+    {
+      "fieldName": "courseTitle",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "courseDescription",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "coursePrice",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "courseLevel",
+      "fieldType": "Level",
+      "fieldValues": "NOVICE,BEGINNER,INTERMEDIATE,ADVANCED,PROFESSIONAL"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "resource",
+      "otherEntityRelationshipName": "course",
+      "relationshipName": "resources"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "lesson",
+      "otherEntityRelationshipName": "courses",
+      "relationshipName": "lessons",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "program",
+      "otherEntityRelationshipName": "courses",
+      "relationshipName": "programs",
+      "otherEntityField": "id",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20210310142414",
+  "entityTableName": "course",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "armory",
+  "applications": "*",
+  "microserviceName": "armory"
+}
